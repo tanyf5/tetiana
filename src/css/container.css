@@ -3,17 +3,28 @@
   min-width: 320px;
   max-width: 375px;
   margin: 0 auto;
-  padding: 0 16px;
+  padding: 35px 24px;
 }
-/* Styles for Tablet devices */
-@media only screen and (min-width: 768px) {
+
+/* Styles for small Tablet devices */
+@media only screen and (min-width: 744px) {
   .container {
-    max-width: 768px;
+    max-width: 744px;
   }
 }
-/* Styles for Desktop devices */
-@media only screen and (min-width: 1200px) {
+
+/* Styles for large Tablet devices */
+@media only screen and (min-width: 1024px) {
   .container {
-    max-width: 1200px;
+    max-width: 1024px;
+    padding: 55px 32px;
+  }
+}
+
+/* Styles for Desktop devices */
+@media only screen and (min-width: 1440px) {
+  .container {
+    max-width: 1440px;
+    padding: 55px 150px;
   }
 }

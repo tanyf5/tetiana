@@ -1,0 +1,130 @@
+/* Styles for Mobile devices */
+
+.projects {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+  justify-content: center;
+}
+
+.projects-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+  align-items: center;
+  justify-content: center;
+}
+
+.projects-list {
+  display: flex;
+  flex-direction: column;
+  gap: 113px;
+  align-items: center;
+  justify-content: center;
+}
+
+.projects-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  justify-content: center;
+  width: 327px;
+}
+
+.proj-img-link {
+  max-height: 374px;
+}
+
+.proj-img {
+  width: 327px;
+  height: 374px;
+  object-fit: cover;
+}
+
+.proj-img img {
+  height: 374px;
+  object-fit: cover;
+}
+
+.project-card-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.project-title {
+  font-size: 24px;
+  font-weight: 400;
+  position: relative;
+}
+
+.project-title::after {
+  position: absolute;
+  content: '';
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: var(--text-color);
+}
+
+.github-icon,
+.attach-icon {
+  fill: var(--text-color);
+  transition: fill 0.2s ease-in-out;
+}
+
+.github-icon:hover,
+.github-icon:focus,
+.attach-icon:hover,
+.attach-icon:focus {
+  fill: #ff5acd;
+}
+
+/* Styles for small Tablet devices */
+@media only screen and (min-width: 744px) {
+  .projects-item {
+    width: 696px;
+  }
+
+  .proj-img {
+    width: 696px;
+    height: 374px;
+  }
+}
+
+/* Styles for large Tablet devices */
+@media only screen and (min-width: 1024px) {
+  .projects-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 113px;
+    row-gap: 75px;
+    align-items: flex-start;
+  }
+
+  .projects-item {
+    width: 423px;
+  }
+
+  .proj-img {
+    width: 423px;
+    height: 374px;
+  }
+}
+
+/* Styles for Desktop devices */
+@media only screen and (min-width: 1440px) {
+  .projects-item {
+    width: 513px;
+  }
+
+  .proj-img {
+    width: 513px;
+    height: 374px;
+  }
+}

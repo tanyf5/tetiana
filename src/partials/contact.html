@@ -1,0 +1,77 @@
+<section class="contact container" id="contact">
+  <h2 class="section-title" data-lang-key="section-contact-title">Contact</h2>
+  <div class="contact-section-wrapper">
+    <div class="info-wrapper">
+      <h3 class="info-title" data-lang-key="reach-me">Reach me out</h3>
+      <ul class="info-list">
+        <li class="info-item">
+          <p class="info-data">Tetiana Bachariewa</p>
+        </li>
+        <li class="info-item">
+          <a href="tetianabachariewa@gmail.com" class="info-link"
+            >tetianabachariewa@gmail.com</a
+          >
+        </li>
+        <li class="info-item">
+          <a href="tel:+48791931481" class="info-link">+48 791 931 481</a>
+        </li>
+        <li class="info-item">
+          <p class="info-data" data-lang-key="location">Poland, Cracow</p>
+        </li>
+      </ul>
+    </div>
+    <div class="form-wrapper">
+      <form id="contact-form" class="contact-form">
+        <input
+          type="hidden"
+          name="time"
+          value="Mar 10 2025 08:46"
+          class="form-input"
+        />
+        <label class="form-label" data-lang-key="name">Name</label>
+        <input type="text" name="name" required class="form-input" />
+        <label class="form-label">Email</label>
+        <input type="email" name="email" required class="form-input" />
+        <label class="form-label" data-lang-key="subject">Subject</label>
+        <input type="text" name="title" required class="form-input" />
+        <label class="form-label" data-lang-key="message">Message</label>
+        <textarea name="message" required class="form-textarea"></textarea>
+        <input
+          type="submit"
+          value="Send"
+          class="form-btn"
+          data-lang-key="send"
+        />
+      </form>
+    </div>
+    <div class="modal-backdrop"></div>
+    <div class="thank-modal">
+      <button class="close-modal-btn">
+        <svg
+          width="36"
+          height="34"
+          viewBox="0 0 36 34"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          class="close-modal-icon"
+        >
+          <line
+            x1="2.70711"
+            y1="1.29289"
+            x2="34.5269"
+            y2="33.1127"
+            stroke-width="2"
+          />
+          <line
+            x1="1.29289"
+            y1="33.1127"
+            x2="33.1127"
+            y2="1.29292"
+            stroke-width="2"
+          />
+        </svg>
+      </button>
+      <p data-lang-key="sent-successfuly">Sent successfuly!</p>
+    </div>
+  </div>
+</section>
