@@ -162,6 +162,10 @@
   font-size: 24px;
 }
 
+.menu-item-cv {
+  font-size: 24px;
+}
+
 /* Dark theme */
 
 .dark-theme .nav-logo {
@@ -238,8 +242,18 @@
     transition: color 0.2s ease-in-out;
   }
 
+  .nav-item-cv {
+    font-size: 24px;
+    transition: color 0.2s ease-in-out;
+  }
+
   .nav-item:hover,
   .nav-item:focus {
+    color: #ff5acd;
+  }
+
+  .nav-item-cv:hover,
+  .nav-item-cv:focus {
     color: #ff5acd;
   }
 
