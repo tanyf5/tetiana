@@ -58,7 +58,6 @@ document.addEventListener('DOMContentLoaded', () => {
 themeToggle.addEventListener('click', toggleTheme);
 
 // Mobile menu
-
 const mobileMenu = document.querySelector('.mobile-menu');
 const openMenuBtn = document.querySelector('.burger-menu');
 const closeMenuBtn = document.querySelector('.close-menu-btn');
@@ -71,10 +70,23 @@ const toggleMenu = () => {
   body.classList.toggle('no-scroll', mobileMenu.classList.contains('is-open'));
 };
 
+const closeMenuIfClickedOutside = event => {
+  if (
+    !mobileMenu.contains(event.target) &&
+    !openMenuBtn.contains(event.target)
+  ) {
+    mobileMenu.classList.remove('is-open');
+    openMenuBtn.setAttribute('aria-expanded', 'false');
+    body.classList.remove('no-scroll');
+  }
+};
+
 openMenuBtn.addEventListener('click', toggleMenu);
 closeMenuBtn.addEventListener('click', toggleMenu);
 
 closeMenuLinks.forEach(item => item.addEventListener('click', toggleMenu));
+
+document.addEventListener('click', closeMenuIfClickedOutside);
 
 // Slider Menu
 
