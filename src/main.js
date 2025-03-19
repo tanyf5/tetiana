@@ -469,6 +469,8 @@ document.querySelector('.lang-toggle').addEventListener('click', function () {
 
 // data-title
 document.addEventListener('DOMContentLoaded', () => {
+  if (window.innerWidth < 1024) return;
+
   document.querySelectorAll('[title]').forEach(el => {
     const titleText = el.getAttribute('title');
     el.setAttribute('data-title', titleText);
@@ -476,6 +478,8 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   document.addEventListener('mouseover', e => {
+    if (window.innerWidth < 1024) return;
+
     const target = e.target.closest('[data-title]');
     if (!target) return;
 
