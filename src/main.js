@@ -1,3 +1,45 @@
+// Easter Egg
+
+function detectDevTools() {
+  const devTools = /./;
+  devTools.toString = function () {
+    console.log(
+      '%cWow! You are a real professional! Check out my code here 😏',
+      'font-size: 24px; color: white; background-color: #ff69b4; padding: 10px; border-radius: 5px;'
+    );
+  };
+  console.log(devTools);
+}
+
+document.addEventListener('keydown', function (event) {
+  if (event.ctrlKey && event.shiftKey && event.key === 'I') {
+    console.log(
+      '%cWow! You are a real professional! Check out my code here 😏',
+      'font-size: 24px; color: white; background-color: #ff69b4; padding: 10px; border-radius: 5px;'
+    );
+  }
+});
+
+let devToolsOpen = false;
+const checkDevTools = () => {
+  const threshold = 160;
+  if (window.outerHeight - window.innerHeight > threshold) {
+    if (!devToolsOpen) {
+      devToolsOpen = true;
+      console.log(
+        '%cWow! You are a real professional! Check out my code here 😏',
+        'font-size: 24px; color: white; background-color: #ff69b4; padding: 10px; border-radius: 5px;'
+      );
+    }
+  } else {
+    devToolsOpen = false;
+  }
+};
+
+setInterval(checkDevTools, 500);
+
+detectDevTools();
+
 // Progress bar
 
 window.addEventListener('scroll', handleScroll);
@@ -57,7 +99,54 @@ const translations = {
     subject: 'Subject',
     message: 'Message',
     send: 'Send',
-    sentSuccessfuly: 'Sent successfuly!',
+    footerTitle: 'Website Description',
+    footerDescr:
+      'This landing is a portfolio website showcasing my skills in creating modern, responsive, and functional websites. My projects are focused on achieving high performance and ease of use for the end users. Here are some key aspects of my site:',
+    htmlCss: 'HTML5 and CSS3',
+    htmlCssTitle:
+      'Core technologies for structuring and styling pages, ensuring modern and clean markup with high accessibility',
+    js: 'JavaScript (ES6)',
+    jsTitle:
+      'Used for interactive elements of the site, such as animations, sliders, and other dynamic features',
+    responsiveness: 'Responsiveness',
+    mobiles: 'Mobile Devices',
+    mobilesTitle: "The container's maximum width is 375px",
+    smallTablets: 'Small tablets',
+    smallTabletsTitle: "The container's maximum width is 744px",
+    largeTablets: 'Large tablets',
+    largeTabletsTitle: "The container's maximum width is 1024px",
+    desktops: 'Desktops',
+    desktopsTitle: "The container's maximum width is 1440px",
+    interactiveElements: 'Interactive Elements',
+    vanillaTilt: 'Vanilla Tilt',
+    vanillaTiltTitle:
+      'A lightweight library for creating 3D effects when hovering over elements',
+    typedJs: 'Typed.js',
+    typedJsTitle: 'For creating animated text on the site, adding dynamism',
+    sweetalert2: 'SweetAlert2',
+    sweetalert2Title:
+      'For implementing beautiful and user-friendly pop-up windows (alerts)',
+    emailJs: 'EmailJS',
+    emailJsTitle:
+      'For integrating contact forms, allowing users to send messages without server-side configuration',
+    animationsEffects: 'Animations and Effects',
+    cssAnimations:
+      'CSS animations are used for smooth color transitions, as well as hover transitions for buttons and other elements',
+    progressBar:
+      'A progress bar shows the page load progress, adding interactivity and improving the user experience',
+    optimization: 'Optimization',
+    fontImageOptimization: 'Font and image optimization for fast page loading',
+    adaptiveScrollbar: 'Adaptive scrollbar width for different browsers',
+    advancedCss:
+      'Advanced CSS techniques like font-smoothing and text-rendering are applied to ensure high-quality text rendering on all devices.',
+    darkTheme: 'Dark Theme',
+    darkThemeDescription:
+      'The website supports a dark theme for a more comfortable viewing experience in low light conditions. All styles automatically change using CSS variables, allowing for efficient management of colors and backgrounds',
+    externalLibraries: 'External Libraries',
+    externalLibrariesDescription:
+      'For user interaction, SweetAlert2 is used for pop-ups, and EmailJS integrates with the contact form on the site',
+    footerCopyright:
+      "© <span id='year'></span> Tetiana Bachariewa. All rights reserved",
   },
   pl: {
     home: 'Główna',
@@ -101,7 +190,60 @@ const translations = {
     subject: 'Temat',
     message: 'Wiadomość',
     send: 'Wyślij',
-    sentSuccessfuly: 'Wysłane pomyślnie!',
+    sentSuccessfuly: 'Wysłano!',
+    form_sent_text: 'Skontaktuję się z Tobą jak najszybciej',
+    ok_button: 'OK',
+    footerTitle: 'Opis strony',
+    footerDescr:
+      'Ta strona to witryna portfolio, która prezentuje moje umiejętności w tworzeniu nowoczesnych, responsywnych i funkcjonalnych stron internetowych. Moje projekty skupiają się na osiąganiu wysokiej wydajności i łatwości użytkowania dla końcowego użytkownika. Oto niektóre kluczowe aspekty mojej strony:',
+    htmlCss: 'HTML5 i CSS3',
+    htmlCssTitle:
+      'Podstawowe technologie do strukturyzowania i stylizacji stron, zapewniające nowoczesny i czysty kod z wysoką dostępnością',
+    js: 'JavaScript (ES6)',
+    jsTitle:
+      'Wykorzystywane do interaktywnych elementów strony, takich jak animacje, suwaki i inne dynamiczne funkcje',
+    responsiveness: 'Responsywność',
+    mobiles: 'Urządzenia mobilne',
+    mobilesTitle: 'Maksymalna szerokość kontenera to 375px',
+    smallTablets: 'Małe tablety',
+    smallTabletsTitle: 'Maksymalna szerokość kontenera to 744px',
+    largeTablets: 'Duże tablety',
+    largeTabletsTitle: 'Maksymalna szerokość kontenera to 1024px',
+    desktops: 'Komputery stacjonarne',
+    desktopsTitle: 'Maksymalna szerokość kontenera to 1440px',
+    interactiveElements: 'Elementy interaktywne',
+    vanillaTilt: 'Vanilla Tilt',
+    vanillaTiltTitle:
+      'Lekka biblioteka do tworzenia efektów 3D po najechaniu na elementy',
+    typedJs: 'Typed.js',
+    typedJsTitle:
+      'Do tworzenia animowanego tekstu na stronie, dodającego dynamiki',
+    sweetalert2: 'SweetAlert2',
+    sweetalert2Title:
+      'Do implementacji pięknych i przyjaznych dla użytkownika okienek pop-up (powiadomień)',
+    emailJs: 'EmailJS',
+    emailJsTitle:
+      'Do integracji formularzy kontaktowych, umożliwiająca użytkownikom wysyłanie wiadomości bez konfiguracji po stronie serwera',
+    animationsEffects: 'Animacje i efekty',
+    cssAnimations:
+      'Animacje CSS są używane do płynnych przejść kolorów oraz przejść przy najechaniu na przyciski i inne elementy',
+    progressBar:
+      'Pasek postępu pokazuje postęp ładowania strony, dodając interaktywność i poprawiając doświadczenie użytkownika',
+    optimization: 'Optymalizacja',
+    fontImageOptimization:
+      'Optymalizacja czcionek i obrazów w celu szybszego ładowania strony',
+    adaptiveScrollbar:
+      'Adaptacyjna szerokość paska przewijania dla różnych przeglądarek',
+    advancedCss:
+      'Zaawansowane techniki CSS, takie jak font-smoothing i text-rendering, są stosowane w celu zapewnienia wysokiej jakości renderowania tekstu na wszystkich urządzeniach.',
+    darkTheme: 'Ciemny motyw',
+    darkThemeDescription:
+      'Strona internetowa obsługuje ciemny motyw, zapewniając bardziej komfortowe przeglądanie w warunkach słabego oświetlenia. Wszystkie style automatycznie zmieniają się za pomocą zmiennych CSS, co umożliwia efektywne zarządzanie kolorami i tłem.',
+    externalLibraries: 'Zewnętrzne biblioteki',
+    externalLibrariesDescription:
+      'Do interakcji użytkownika wykorzystywane są SweetAlert2 do okienek pop-up, a EmailJS do integracji z formularzem kontaktowym na stronie.',
+    footerCopyright:
+      "© <span id='year'></span> Tetiana Bachariewa. Wszystkie prawa zastrzeżone",
   },
 };
 
@@ -224,8 +366,91 @@ function changeLanguage(lang) {
     .querySelectorAll("[data-lang-key='send']")
     .forEach(el => (el.value = translations[lang].send));
   document
-    .querySelectorAll("[data-lang-key='sent-successfuly']")
-    .forEach(el => (el.textContent = translations[lang].sentSuccessfuly));
+    .querySelectorAll("[data-lang-key='footer-title']")
+    .forEach(el => (el.textContent = translations[lang].footerTitle));
+  document
+    .querySelectorAll("[data-lang-key='footer-descr']")
+    .forEach(el => (el.textContent = translations[lang].footerDescr));
+  document.querySelectorAll("[data-lang-key='html-css']").forEach(el => {
+    el.innerHTML = `<span class="tech-used-title">${translations[lang].htmlCss}</span>: ${translations[lang].htmlCssTitle}`;
+  });
+  document.querySelectorAll("[data-lang-key='js']").forEach(el => {
+    el.innerHTML = `<span class="tech-used-title">${translations[lang].js}</span>: ${translations[lang].jsTitle}`;
+  });
+  document
+    .querySelectorAll("[data-lang-key='responsiveness']")
+    .forEach(el => (el.textContent = translations[lang].responsiveness));
+  document.querySelectorAll("[data-lang-key='mobile']").forEach(el => {
+    el.innerHTML = `<span class="tech-used-title">${translations[lang].mobiles}</span>: ${translations[lang].mobilesTitle}`;
+  });
+  document.querySelectorAll("[data-lang-key='small-tablets']").forEach(el => {
+    el.innerHTML = `<span class="tech-used-title">${translations[lang].smallTablets}</span>: ${translations[lang].smallTabletsTitle}`;
+  });
+  document.querySelectorAll("[data-lang-key='large-tablets']").forEach(el => {
+    el.innerHTML = `<span class="tech-used-title">${translations[lang].largeTablets}</span>: ${translations[lang].largeTabletsTitle}`;
+  });
+  document.querySelectorAll("[data-lang-key='desktops']").forEach(el => {
+    el.innerHTML = `<span class="tech-used-title">${translations[lang].desktops}</span>: ${translations[lang].desktopsTitle}`;
+  });
+  document
+    .querySelectorAll("[data-lang-key='interactive-elements']")
+    .forEach(el => (el.textContent = translations[lang].interactiveElements));
+  document.querySelectorAll("[data-lang-key='vanilla-tilt']").forEach(el => {
+    el.innerHTML = `<span class="tech-used-title">${translations[lang].vanillaTilt}</span>: ${translations[lang].vanillaTiltTitle}`;
+  });
+  document.querySelectorAll("[data-lang-key='typed-js']").forEach(el => {
+    el.innerHTML = `<span class="tech-used-title">${translations[lang].typedJs}</span>: ${translations[lang].typedJsTitle}`;
+  });
+  document.querySelectorAll("[data-lang-key='sweetalert2']").forEach(el => {
+    el.innerHTML = `<span class="tech-used-title">${translations[lang].sweetalert2}</span>: ${translations[lang].sweetalert2Title}`;
+  });
+  document.querySelectorAll("[data-lang-key='emailjs']").forEach(el => {
+    el.innerHTML = `<span class="tech-used-title">${translations[lang].emailJs}</span>: ${translations[lang].emailJsTitle}`;
+  });
+  document
+    .querySelectorAll("[data-lang-key='animations-effects']")
+    .forEach(el => (el.textContent = translations[lang].animationsEffects));
+  document
+    .querySelectorAll("[data-lang-key='css-animations']")
+    .forEach(el => (el.textContent = translations[lang].cssAnimations));
+  document
+    .querySelectorAll("[data-lang-key='progress-bar']")
+    .forEach(el => (el.textContent = translations[lang].progressBar));
+  document
+    .querySelectorAll("[data-lang-key='optimization']")
+    .forEach(el => (el.textContent = translations[lang].optimization));
+  document
+    .querySelectorAll("[data-lang-key='font-image-optimization']")
+    .forEach(el => (el.textContent = translations[lang].fontImageOptimization));
+  document
+    .querySelectorAll("[data-lang-key='adaptive-scrollbar']")
+    .forEach(el => (el.textContent = translations[lang].adaptiveScrollbar));
+  document
+    .querySelectorAll("[data-lang-key='advanced-css']")
+    .forEach(el => (el.innerHTML = translations[lang].advancedCss));
+  document
+    .querySelectorAll("[data-lang-key='font-smoothing']")
+    .forEach(el => (el.textContent = translations[lang].fontSmoothing));
+  document
+    .querySelectorAll("[data-lang-key='text-rendering']")
+    .forEach(el => (el.textContent = translations[lang].textRendering));
+  document
+    .querySelectorAll("[data-lang-key='dark-theme']")
+    .forEach(el => (el.textContent = translations[lang].darkTheme));
+  document
+    .querySelectorAll("[data-lang-key='dark-theme-description']")
+    .forEach(el => (el.textContent = translations[lang].darkThemeDescription));
+  document
+    .querySelectorAll("[data-lang-key='external-libraries']")
+    .forEach(el => (el.textContent = translations[lang].externalLibraries));
+  document
+    .querySelectorAll("[data-lang-key='external-libraries-description']")
+    .forEach(
+      el => (el.textContent = translations[lang].externalLibrariesDescription)
+    );
+  document
+    .querySelectorAll("[data-lang-key='footer-copyright']")
+    .forEach(el => (el.innerHTML = translations[lang].footerCopyright));
   document.querySelector('#theme-toggle').title =
     translations[lang].themeToggle;
   document.querySelector('.lang-toggle').title = translations[lang].langToggle;
@@ -297,7 +522,8 @@ document.querySelectorAll('.menu-item').forEach(link => {
   link.addEventListener('click', scrollToSection);
 });
 
-const contactBtn = document.querySelectorAll('[href*="#contact"]');
-if (contactBtn) {
-  contactBtn.addEventListener('click', scrollToSection);
-}
+const contactBtn = document
+  .querySelectorAll('[href="#contact"]')
+  .forEach(el => {
+    el.addEventListener('click', scrollToSection);
+  });

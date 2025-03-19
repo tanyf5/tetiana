@@ -63,13 +63,14 @@ function createShadow(e, currTarget) {
 function onMouseMove(e) {
   createShadow(e, e.currentTarget);
 }
+
 function onTouchMove(e) {
   createShadow(e.changedTouches[0], e.currentTarget);
 }
 
-const heading = document.querySelector('.skills-item-one');
+const heading = document.querySelector('#skills-item');
 heading.addEventListener('mousemove', onMouseMove);
-heading.addEventListener('touchmove', onTouchMove);
+heading.addEventListener('touchmove', onTouchMove, { passive: true });
 
 // Bouncing shapes
 

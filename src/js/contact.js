@@ -1,15 +1,47 @@
-const modal = document.querySelector('.thank-modal');
-const closeModal = document.querySelector('.close-modal-btn');
-const backdrop = document.querySelector('.modal-backdrop');
-const body = document.body;
+const translations = {
+  en: {
+    sent_successfuly: 'Sent!',
+    form_sent_text: 'I will contact you as soon as possible',
+    ok_button: 'OK',
+  },
+  pl: {
+    sent_successfuly: 'Wysłano!',
+    form_sent_text: 'Skontaktuję się z Tobą jak najszybciej',
+    ok_button: 'OK',
+  },
+};
+
+function getTranslatedText(key, lang) {
+  return translations[lang][key] || key;
+}
 
 (function () {
-  // https://dashboard.emailjs.com/admin/account
   emailjs.init({
     publicKey: '4eTk94HzTNoT8tO49',
   });
 })();
 
+function showSuccessModal() {
+  const lang = document.querySelector('.lang-toggle').getAttribute('data-lang');
+
+  Swal.fire({
+    title: getTranslatedText('sent_successfuly', lang),
+    text: getTranslatedText('form_sent_text', lang),
+    icon: 'success',
+    confirmButtonText: getTranslatedText('ok_button', lang),
+    showClass: {
+      popup: 'animate__animated animate__fadeInDown',
+    },
+    hideClass: {
+      popup: 'animate__animated animate__fadeOutUp',
+    },
+    background: 'var(--bg-color)',
+    color: 'var(--text-color)',
+    confirmButtonColor: '#ff5acd',
+  });
+}
+
+// Використання у формі
 window.onload = function () {
   document
     .getElementById('contact-form')
@@ -18,10 +50,8 @@ window.onload = function () {
       emailjs.sendForm('service_p80kddx', 'template_hacilqb', this).then(
         () => {
           console.log('SUCCESS!');
-          document.getElementById('contact-form').reset();
-          modal.classList.toggle('visible');
-          backdrop.classList.toggle('visible');
-          body.classList.toggle('no-scroll');
+          this.reset();
+          showSuccessModal();
         },
         error => {
           console.log('FAILED...', error);
@@ -29,13 +59,3 @@ window.onload = function () {
       );
     });
 };
-
-function closeThankModal(event) {
-  event.preventDefault();
-  modal.classList.toggle('visible');
-  backdrop.classList.toggle('visible');
-  body.classList.toggle('no-scroll');
-}
-
-closeModal.addEventListener('click', closeThankModal);
-backdrop.addEventListener('click', closeThankModal);
