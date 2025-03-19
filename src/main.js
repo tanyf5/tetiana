@@ -522,6 +522,10 @@ document.querySelectorAll('.menu-item').forEach(link => {
   link.addEventListener('click', scrollToSection);
 });
 
+document.querySelectorAll('.hero-projects-btn').forEach(link => {
+  link.addEventListener('click', scrollToSection);
+});
+
 const contactBtn = document
   .querySelectorAll('[href="#contact"]')
   .forEach(el => {
