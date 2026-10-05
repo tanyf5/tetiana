@@ -27,12 +27,6 @@ function toggleTheme() {
   // SVG
   themeToggle.innerHTML = isDark ? moonIcon : sunIcon;
 
-  // title update
-  themeToggle.setAttribute(
-    'title',
-    isDark ? 'Switch to light mode' : 'Switch to dark mode'
-  );
-
   // Save in localStorage
   localStorage.setItem('theme', isDark ? 'dark' : 'light');
 }
@@ -49,10 +43,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   themeToggle.innerHTML = isDark ? moonIcon : sunIcon;
-  themeToggle.setAttribute(
-    'title',
-    isDark ? 'Switch to light mode' : 'Switch to dark mode'
-  );
 });
 
 themeToggle.addEventListener('click', toggleTheme);
